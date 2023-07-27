@@ -1,0 +1,40 @@
+plugins {
+    id 'java'
+    id 'jacoco'
+}
+
+group = 'com.kata'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter:5.10.0'
+    testImplementation 'org.jacoco:org.jacoco.agent:0.8.10'
+
+}
+
+jacocoTestReport {
+    dependsOn(test)
+}
+
+jacocoTestCoverageVerification {
+    violationRules {
+        rule {
+            limit {
+                minimum = 1.0
+            }
+        }
+    }
+}
+
+check {
+    dependsOn(jacocoTestCoverageVerification)
+}
+
+test {
+    useJUnitPlatform()
+    finalizedBy(jacocoTestReport)
+}
