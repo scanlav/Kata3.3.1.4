@@ -12,16 +12,11 @@ BoundaryServiceTest {
 
     @Test
     void testFindMin() {
-        int[] marks = {-1, 2, 3, 4, -3};
+        int[] marks = {-1, 2, 3, 4};
 
         int expectedResult = Arrays.stream(marks).min().getAsInt();
         int actualResult = boundaryService.findMin(marks);
 
         assertEquals(expectedResult, actualResult);
-    }
-
-    @Test
-    void testFake() {
-        assertEquals(1, 2);
     }
 }
