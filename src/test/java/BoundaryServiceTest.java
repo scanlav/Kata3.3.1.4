@@ -19,4 +19,9 @@ BoundaryServiceTest {
 
         assertEquals(expectedResult, actualResult);
     }
+
+    @Test
+    void testFake() {
+        assertEquals(1, 2);
+    }
 }
