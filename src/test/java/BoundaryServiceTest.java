@@ -12,7 +12,7 @@ BoundaryServiceTest {
 
     @Test
     void testFindMin() {
-        int[] marks = {-1, 2, 3, 4};
+        int[] marks = {-1, 2, 3, 4, 0, -3};
 
         int expectedResult = Arrays.stream(marks).min().getAsInt();
         int actualResult = boundaryService.findMin(marks);
